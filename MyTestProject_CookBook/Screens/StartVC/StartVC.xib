@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StartVC" customModule="MyTestProject_CookBook" customModuleProvider="target">
+            <connections>
+                <outlet property="enterUIButton" destination="xCC-t1-pxt" id="ez9-VI-qlS"/>
+                <outlet property="mainLabel" destination="2dB-Pj-2Xy" id="zK9-Lz-EuT"/>
+                <outlet property="textLabel" destination="HpV-06-Qtp" id="uXR-mc-omf"/>
+                <outlet property="uiView" destination="1NB-8y-5HJ" id="baQ-OC-8DK"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cookBook" translatesAutoresizingMaskIntoConstraints="NO" id="1NB-8y-5HJ">
+                    <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cook Book" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2dB-Pj-2Xy">
+                    <rect key="frame" x="16" y="626" width="358" height="43"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="36"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xCC-t1-pxt">
+                    <rect key="frame" x="16" y="710" width="358" height="44"/>
+                    <color key="backgroundColor" name="Rose"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="uKt-hA-XvV"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Enter">
+                        <fontDescription key="titleFontDescription" type="system" pointSize="14"/>
+                        <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="enterButton" destination="-1" eventType="touchUpInside" id="SSd-r0-AFX"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HpV-06-Qtp">
+                    <rect key="frame" x="16" y="677" width="358" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="1NB-8y-5HJ" secondAttribute="bottom" id="07i-kL-ncy"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="xCC-t1-pxt" secondAttribute="trailing" constant="16" id="3W9-nd-gsT"/>
+                <constraint firstItem="HpV-06-Qtp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="8gd-iu-4wa"/>
+                <constraint firstItem="2dB-Pj-2Xy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="BBd-VK-W1G"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="xCC-t1-pxt" secondAttribute="bottom" constant="56" id="Pzh-2K-5K5"/>
+                <constraint firstItem="xCC-t1-pxt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="QB1-e4-CLr"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="2dB-Pj-2Xy" secondAttribute="trailing" constant="16" id="SEO-lf-ydB"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="HpV-06-Qtp" secondAttribute="trailing" constant="16" id="Xfg-nG-MIY"/>
+                <constraint firstItem="HpV-06-Qtp" firstAttribute="top" secondItem="2dB-Pj-2Xy" secondAttribute="bottom" constant="8" id="Y4H-Tf-yf9"/>
+                <constraint firstItem="1NB-8y-5HJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="pz9-9r-T5r"/>
+                <constraint firstItem="1NB-8y-5HJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="s8C-sa-9Ut"/>
+                <constraint firstItem="xCC-t1-pxt" firstAttribute="top" secondItem="HpV-06-Qtp" secondAttribute="bottom" constant="16" id="sR1-qP-dn1"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1NB-8y-5HJ" secondAttribute="trailing" id="wKz-j4-XYi"/>
+            </constraints>
+            <point key="canvasLocation" x="48" y="21"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="cookBook" width="2400" height="3275"/>
+        <namedColor name="Rose">
+            <color red="0.77600002288818359" green="0.60799998044967651" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
