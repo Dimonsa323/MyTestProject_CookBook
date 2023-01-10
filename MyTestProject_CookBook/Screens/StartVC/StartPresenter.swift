@@ -11,12 +11,12 @@ import UIKit
 // MARK: - protocol StartPresenterProtocol
 
 protocol StartPresenterProtocol {
-    
+    func showTabBar(view: UIViewController)
 }
 
 // MARK: - Class StartPresenter
 
-class StartPresenter: StartPresenterProtocol {
+class StartPresenter {
     
     // MARK: - Properties
     
@@ -33,9 +33,9 @@ class StartPresenter: StartPresenterProtocol {
 
 // MARK: - Private Extension
 
-private extension StartPresenter {
+extension StartPresenter: StartPresenterProtocol {
     
-    func showTabBar() {
-        
+    func showTabBar(view: UIViewController) {
+        navigator.showTabBar(view: view)
     }
 }

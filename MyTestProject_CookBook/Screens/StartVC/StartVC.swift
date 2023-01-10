@@ -20,7 +20,7 @@ class StartVC: UIViewController {
     
 // MARK: - Properties
     
-    let presenter: StartPresenterProtocol
+  private let presenter: StartPresenterProtocol
     
 // MARK: - Init
     
@@ -61,6 +61,6 @@ Log in these app, and you'll be cooking it up in no time
 private extension StartVC {
     
     @IBAction func enterButton() {
-        
+        presenter.showTabBar(view: self)
     }
 }

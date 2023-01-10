@@ -1,4 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21279" systemVersion="21G115" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="FavoriteRecipeCD" representedClassName="FavoriteRecipeCD" syncable="YES">
+        <attribute name="calories" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="image" attributeType="String"/>
+        <attribute name="label" attributeType="String"/>
+        <attribute name="source" attributeType="String"/>
+        <attribute name="totalTime" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="totalWeight" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="url" attributeType="String"/>
+        <relationship name="ingredients" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="IngredientsCD" inverseName="favoriteRecipe" inverseEntity="IngredientsCD"/>
+    </entity>
+    <entity name="IngredientsCD" representedClassName="IngredientsCD" syncable="YES">
+        <attribute name="image" optional="YES" attributeType="String"/>
+        <attribute name="text" attributeType="String"/>
+        <relationship name="favoriteRecipe" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FavoriteRecipeCD" inverseName="ingredients" inverseEntity="FavoriteRecipeCD"/>
+    </entity>
 </model>

@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FoodMenuVC" customModule="MyTestProject_CookBook" customModuleProvider="target">
             <connections>
+                <outlet property="collectionView" destination="jp7-TE-8vZ" id="Aav-eg-fay"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

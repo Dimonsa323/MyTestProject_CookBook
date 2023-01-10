@@ -13,5 +13,10 @@ class Assembler {
     private let networking = Networking()
     private let coreData = CoreDataStore()
     
-    
+    func showFlowController(navigator: NavigatorProtocol) -> UIViewController {
+        
+        let vc = FlowController(networking: networking, navigator: navigator)
+        
+        return vc
+    }
 }
