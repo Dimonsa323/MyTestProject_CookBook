@@ -16,6 +16,12 @@ class Navigator: NavigatorProtocol {
     
     private let assembler = Assembler()
     
+    func showStartVC() -> UIViewController {
+        let vc = assembler.createStartVC(navigator: self)
+        
+        return vc
+    }
+    
     func showTabBar(view: UIViewController) {
         let vc = assembler.showFlowController(navigator: self)
         vc.modalTransitionStyle = .crossDissolve

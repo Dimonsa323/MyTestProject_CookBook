@@ -11,7 +11,8 @@ import UIKit
 // MARK: - Protocol Presenter
 
 protocol FoodMenuPresenterProtocol {
-    
+    var hits: [Hits] { get }
+    var menuModel: [MenuModel] { get }
 }
 
 // MARK: - Class FoodMenuPresenter
@@ -20,10 +21,11 @@ class FoodMenuPresenter: FoodMenuPresenterProtocol  {
     
 // MARK: - Properties
     
+    let hits: [Hits] = []
+    let menuModel = MenuModel.allCases
+    
     private let navigator: NavigatorProtocol
     private let networking: NetworkingProtocol
-    
-    
     
 // MARK: - Init
     

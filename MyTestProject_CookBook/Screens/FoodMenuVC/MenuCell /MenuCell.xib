@@ -42,6 +42,10 @@
                 <constraint firstItem="m9Z-xq-nXg" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="vam-ex-VxY"/>
             </constraints>
             <size key="customSize" width="342" height="137"/>
+            <connections>
+                <outlet property="menuImage" destination="XH4-I6-QJc" id="Pxz-MW-CbF"/>
+                <outlet property="menuText" destination="m9Z-xq-nXg" id="r0X-tc-KjP"/>
+            </connections>
             <point key="canvasLocation" x="106.15384615384615" y="13.86255924170616"/>
         </collectionViewCell>
     </objects>

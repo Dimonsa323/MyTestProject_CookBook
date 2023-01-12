@@ -18,6 +18,7 @@ class FoodMenuVC: UIViewController {
 // MARK: - Properties
     
     private let presenter: FoodMenuPresenterProtocol
+    private let createCell: String = String(describing: MenuCell.self)
     
 // MARK: - Init
     
@@ -35,9 +36,10 @@ class FoodMenuVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-    
     }
 }
+
+// MARK: - Private Extension
 
 extension FoodMenuVC {
     func setupUI() {
@@ -49,7 +51,7 @@ extension FoodMenuVC {
         collectionView.showsVerticalScrollIndicator = false
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(<#T##cellClass: AnyClass?##AnyClass?#>, forCellWithReuseIdentifier: <#T##String#>)
+        collectionView.register(.init(nibName: createCell, bundle: nil), forCellWithReuseIdentifier: createCell)
     }
     
     func setupNavigationController() {
@@ -59,15 +61,25 @@ extension FoodMenuVC {
     }
 }
 
-// MARK: - Private Extension
-
 extension FoodMenuVC: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        <#code#>
+        presenter.menuModel.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        <#code#>
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: createCell,
+                                                      for: indexPath) as! MenuCell
+        let menuModel = presenter.menuModel[indexPath.item]
+        cell.config(type: menuModel)
+        
+        return cell
+    }
+}
+
+extension FoodMenuVC: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        CGSize(width: UIScreen.main.bounds.width - 32, height: 150)
     }
 }
