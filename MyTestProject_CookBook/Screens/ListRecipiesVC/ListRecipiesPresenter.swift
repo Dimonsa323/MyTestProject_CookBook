@@ -12,6 +12,7 @@ import UIKit
 protocol ListRecipiesPresenterProtocol {
     var hits: [Hits] { get }
     var menuModel: MenuModel { get }
+    func getInfo(closure: @escaping () -> Void)
 }
 
 // MARK: - Class
@@ -20,8 +21,8 @@ class ListRecipiesPresenter {
     
 // MARK: - Properties
 
-    let hits: [Hits] = []
-    let menuModel: MenuModel
+    var hits: [Hits] = []
+    var menuModel: MenuModel
     
     private let navigator: NavigatorProtocol
     private let networking: NetworkingProtocol
@@ -39,5 +40,10 @@ class ListRecipiesPresenter {
 
 extension ListRecipiesPresenter: ListRecipiesPresenterProtocol {
     
-    
+    func getInfo(closure: @escaping () -> Void) {
+        networking.getModel(type: menuModel) { hit in
+            self.hits = hit
+            closure()
+        }
+    }
 }

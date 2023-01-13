@@ -9,7 +9,9 @@ import Foundation
 import UIKit
 
 protocol NavigatorProtocol {
-    func showTabBar(view: UIViewController) 
+    func showStartVC() -> UIViewController
+    func showTabBar(view: UIViewController)
+    func showListVC(view: UIViewController, menuModel: MenuModel)
 }
 
 class Navigator: NavigatorProtocol {
@@ -23,9 +25,15 @@ class Navigator: NavigatorProtocol {
     }
     
     func showTabBar(view: UIViewController) {
-        let vc = assembler.showFlowController(navigator: self)
+        let vc = assembler.createFlowController(navigator: self)
         vc.modalTransitionStyle = .crossDissolve
         vc.modalPresentationStyle = .fullScreen
         view.navigationController?.present(vc, animated: true)
+    }
+    
+    func showListVC(view: UIViewController, menuModel: MenuModel) {
+        let vc = assembler.createListRecipiesVC(navigator: self, menuModel: menuModel)
+        vc.hidesBottomBarWhenPushed = true
+        view.navigationController?.pushViewController(vc, animated: true)
     }
 }

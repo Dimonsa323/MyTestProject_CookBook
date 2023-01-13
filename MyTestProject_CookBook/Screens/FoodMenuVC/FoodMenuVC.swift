@@ -75,6 +75,10 @@ extension FoodMenuVC: UICollectionViewDataSource, UICollectionViewDelegate {
         
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        presenter.showListRecipiesVC(view: self, indexPath: indexPath)
+    }
 }
 
 extension FoodMenuVC: UICollectionViewDelegateFlowLayout {

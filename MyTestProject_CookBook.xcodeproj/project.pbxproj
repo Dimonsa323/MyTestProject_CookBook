@@ -43,6 +43,13 @@
 		14D7587F296F3F6100B008E9 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D7587D296F3F6100B008E9 /* ProfileVC.swift */; };
 		14D75880296F3F6100B008E9 /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14D7587E296F3F6100B008E9 /* ProfileVC.xib */; };
 		14D75882296F3F7B00B008E9 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D75881296F3F7B00B008E9 /* ProfilePresenter.swift */; };
+		14D7588B297028D600B008E9 /* ListRecipiesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D75889297028D600B008E9 /* ListRecipiesCell.swift */; };
+		14D7588C297028D600B008E9 /* ListRecipiesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14D7588A297028D600B008E9 /* ListRecipiesCell.xib */; };
+		14D758902970ADF600B008E9 /* IngredientsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D7588E2970ADF600B008E9 /* IngredientsVC.swift */; };
+		14D758912970ADF600B008E9 /* IngredientsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14D7588F2970ADF600B008E9 /* IngredientsVC.xib */; };
+		14D758932970AE0800B008E9 /* IngredientsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D758922970AE0800B008E9 /* IngredientsPresenter.swift */; };
+		14D758972970AE3400B008E9 /* IngredientsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D758952970AE3400B008E9 /* IngredientsCell.swift */; };
+		14D758982970AE3400B008E9 /* IngredientsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14D758962970AE3400B008E9 /* IngredientsCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +91,13 @@
 		14D7587D296F3F6100B008E9 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		14D7587E296F3F6100B008E9 /* ProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileVC.xib; sourceTree = "<group>"; };
 		14D75881296F3F7B00B008E9 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
+		14D75889297028D600B008E9 /* ListRecipiesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRecipiesCell.swift; sourceTree = "<group>"; };
+		14D7588A297028D600B008E9 /* ListRecipiesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListRecipiesCell.xib; sourceTree = "<group>"; };
+		14D7588E2970ADF600B008E9 /* IngredientsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsVC.swift; sourceTree = "<group>"; };
+		14D7588F2970ADF600B008E9 /* IngredientsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IngredientsVC.xib; sourceTree = "<group>"; };
+		14D758922970AE0800B008E9 /* IngredientsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsPresenter.swift; sourceTree = "<group>"; };
+		14D758952970AE3400B008E9 /* IngredientsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsCell.swift; sourceTree = "<group>"; };
+		14D758962970AE3400B008E9 /* IngredientsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IngredientsCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +241,7 @@
 		14D758242969DF7500B008E9 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				14D7588D2970ADD200B008E9 /* IngredientsVC */,
 				14D7587C296F3F3F00B008E9 /* ProfileVC */,
 				14D758282969E1D900B008E9 /* StartVC */,
 				14D75835296C82CE00B008E9 /* FoodMenuVC */,
@@ -276,6 +291,7 @@
 		14D7586F296F28D900B008E9 /* ListRecipiesVC */ = {
 			isa = PBXGroup;
 			children = (
+				14D758832970243A00B008E9 /* ListRecipiesCell */,
 				14D75870296F291F00B008E9 /* ListRecipiesVC.swift */,
 				14D75871296F291F00B008E9 /* ListRecipiesVC.xib */,
 				14D75876296F294300B008E9 /* ListRecipiesPresenter.swift */,
@@ -291,6 +307,35 @@
 				14D75881296F3F7B00B008E9 /* ProfilePresenter.swift */,
 			);
 			path = ProfileVC;
+			sourceTree = "<group>";
+		};
+		14D758832970243A00B008E9 /* ListRecipiesCell */ = {
+			isa = PBXGroup;
+			children = (
+				14D75889297028D600B008E9 /* ListRecipiesCell.swift */,
+				14D7588A297028D600B008E9 /* ListRecipiesCell.xib */,
+			);
+			path = ListRecipiesCell;
+			sourceTree = "<group>";
+		};
+		14D7588D2970ADD200B008E9 /* IngredientsVC */ = {
+			isa = PBXGroup;
+			children = (
+				14D758942970AE1000B008E9 /* IngredientsCell */,
+				14D7588E2970ADF600B008E9 /* IngredientsVC.swift */,
+				14D7588F2970ADF600B008E9 /* IngredientsVC.xib */,
+				14D758922970AE0800B008E9 /* IngredientsPresenter.swift */,
+			);
+			path = IngredientsVC;
+			sourceTree = "<group>";
+		};
+		14D758942970AE1000B008E9 /* IngredientsCell */ = {
+			isa = PBXGroup;
+			children = (
+				14D758952970AE3400B008E9 /* IngredientsCell.swift */,
+				14D758962970AE3400B008E9 /* IngredientsCell.xib */,
+			);
+			path = IngredientsCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -356,7 +401,10 @@
 				14D75873296F291F00B008E9 /* ListRecipiesVC.xib in Resources */,
 				14D75860296DD47B00B008E9 /* MenuCell.xib in Resources */,
 				14D75880296F3F6100B008E9 /* ProfileVC.xib in Resources */,
+				14D7588C297028D600B008E9 /* ListRecipiesCell.xib in Resources */,
+				14D758982970AE3400B008E9 /* IngredientsCell.xib in Resources */,
 				14D7582C2969E28700B008E9 /* StartVC.xib in Resources */,
+				14D758912970ADF600B008E9 /* IngredientsVC.xib in Resources */,
 				14D758072969D93400B008E9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -368,6 +416,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14D758902970ADF600B008E9 /* IngredientsVC.swift in Sources */,
 				14D7586E296ED2A800B008E9 /* ImageView.swift in Sources */,
 				14D757FB2969D93200B008E9 /* AppDelegate.swift in Sources */,
 				14D75877296F294300B008E9 /* ListRecipiesPresenter.swift in Sources */,
@@ -376,6 +425,7 @@
 				14D7585F296DD47B00B008E9 /* MenuCell.swift in Sources */,
 				14D7586A296DF92400B008E9 /* TabBarAppearance.swift in Sources */,
 				14D7585B296CAE5000B008E9 /* IngredientsCD+CoreDataProperties.swift in Sources */,
+				14D758932970AE0800B008E9 /* IngredientsPresenter.swift in Sources */,
 				14D75837296C82FC00B008E9 /* FoodMenuPresenter.swift in Sources */,
 				14D75866296DF83800B008E9 /* UIViewController .swift in Sources */,
 				14D7583B296C881D00B008E9 /* RecipeModel.swift in Sources */,
@@ -385,6 +435,7 @@
 				14D75859296CAE5000B008E9 /* FavoriteRecipeCD+CoreDataProperties.swift in Sources */,
 				14D75839296C855900B008E9 /* FlowController .swift in Sources */,
 				14D7587F296F3F6100B008E9 /* ProfileVC.swift in Sources */,
+				14D7588B297028D600B008E9 /* ListRecipiesCell.swift in Sources */,
 				14D7581D2969DEA200B008E9 /* Assembler.swift in Sources */,
 				14D7585A296CAE5000B008E9 /* IngredientsCD+CoreDataClass.swift in Sources */,
 				14D758232969DEE600B008E9 /* Networking.swift in Sources */,
@@ -396,6 +447,7 @@
 				14D7582B2969E28700B008E9 /* StartVC.swift in Sources */,
 				14D75868296DF8D300B008E9 /* View+ActivityIndicator.swift in Sources */,
 				14D758302969E2C100B008E9 /* StartPresenter.swift in Sources */,
+				14D758972970AE3400B008E9 /* IngredientsCell.swift in Sources */,
 				14D75833296C82AE00B008E9 /* FoodMenuVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -20,10 +20,17 @@ class Assembler {
         return vc 
     }
     
-    func showFlowController(navigator: NavigatorProtocol) -> UIViewController {
+    func createFlowController(navigator: NavigatorProtocol) -> UIViewController {
         
         let vc = FlowController(networking: networking, navigator: navigator)
         
         return vc
+    }
+    
+    func createListRecipiesVC(navigator: NavigatorProtocol, menuModel: MenuModel) -> UIViewController {
+        let presenter = ListRecipiesPresenter(navigator: navigator, networking: networking, menuModel: menuModel)
+        let vc = ListRecipiesVC(presenter: presenter)
+        
+        return vc 
     }
 }

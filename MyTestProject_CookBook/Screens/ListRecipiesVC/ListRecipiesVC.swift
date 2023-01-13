@@ -18,6 +18,7 @@ class ListRecipiesVC: UIViewController {
 // MARK: - Properties
     
     private let presenter: ListRecipiesPresenterProtocol
+    private let listCell: String = String(describing: ListRecipiesCell.self)
 
 // MARK: - Init
     
@@ -35,10 +36,20 @@ class ListRecipiesVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-       
+        presenter.getInfo {
+            self.tableView.reloadData()
+            UIView.animate(withDuration: 1) {
+                self.tableView.layer.opacity = 1
+            }
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.navigationBar.prefersLargeTitles = true
+        hidesBottomBarWhenPushed = false
     }
 }
-
 
 // MARK: - Private Extension
 
@@ -56,6 +67,29 @@ private extension ListRecipiesVC {
     }
     
     func setupTableView() {
-        
+        tableView.layer.opacity = 0
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(.init(nibName: listCell, bundle: nil), forCellReuseIdentifier: listCell)
     }
+}
+
+// MARK: - Private Extension
+
+extension ListRecipiesVC: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        presenter.hits.count 
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: listCell, for: indexPath) as! ListRecipiesCell
+        let recipe = presenter.hits[indexPath.row]
+        cell.config(with: recipe.recipe)
+        
+        return cell
+    }
+    
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        <#code#>
+//    }
 }

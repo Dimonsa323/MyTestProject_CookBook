@@ -13,11 +13,13 @@ import UIKit
 protocol FoodMenuPresenterProtocol {
     var hits: [Hits] { get }
     var menuModel: [MenuModel] { get }
+    
+    func showListRecipiesVC(view: UIViewController, indexPath: IndexPath)
 }
 
 // MARK: - Class FoodMenuPresenter
 
-class FoodMenuPresenter: FoodMenuPresenterProtocol  {
+class FoodMenuPresenter {
     
 // MARK: - Properties
     
@@ -35,3 +37,9 @@ class FoodMenuPresenter: FoodMenuPresenterProtocol  {
     }
 }
 
+extension FoodMenuPresenter: FoodMenuPresenterProtocol {
+    func showListRecipiesVC(view: UIViewController, indexPath: IndexPath) {
+        let menuFood = menuModel[indexPath.item]
+        navigator.showListVC(view: view, menuModel: menuFood)
+    }
+}
