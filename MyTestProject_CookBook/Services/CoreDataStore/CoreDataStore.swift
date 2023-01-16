@@ -28,7 +28,7 @@ class CoreDataStore: CoreDataStoreProtocol {
     
     lazy var persistentContainer: NSPersistentContainer = {
         
-        let container = NSPersistentContainer(name: "TestApplication")
+        let container = NSPersistentContainer(name: "MyTestProject_CookBook")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 

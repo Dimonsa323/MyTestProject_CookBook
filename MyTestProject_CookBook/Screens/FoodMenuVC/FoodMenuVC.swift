@@ -77,7 +77,7 @@ extension FoodMenuVC: UICollectionViewDataSource, UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        presenter.showListRecipiesVC(view: self, indexPath: indexPath)
+        presenter.showListRecipiesVC(view: self, indexPath: indexPath, screenType: .internetRecipe)
     }
 }
 

@@ -7,9 +7,20 @@
 
 import UIKit
 
-class ProfileVC: UIViewController {
+// MARK: - Class ProfileVC
 
+class ProfileVC: UIViewController {
+    
+// MARK: - Outlet
+    
+    @IBOutlet weak var imageProfile: UIImageView!
+    @IBOutlet weak var profileButton: UIButton!
+    
+// MARK: - Properties
+    
     private let presenter: ProfilePresenterProtocol
+    
+// MARK: - Init
     
     init(presenter: ProfilePresenterProtocol) {
         self.presenter = presenter
@@ -20,9 +31,21 @@ class ProfileVC: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+// MARK: - Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.isNavigationBarHidden = true
+        imageProfile.layer.cornerRadius = 16
+        profileButton.layer.cornerRadius = 6
+    }
+}
 
-        
+// MARK: - Private Extension 
+
+extension ProfileVC {
+    
+    @IBAction func infoButton(_ sender: Any) {
+        presenter.showLinkedin(view: self)
     }
 }

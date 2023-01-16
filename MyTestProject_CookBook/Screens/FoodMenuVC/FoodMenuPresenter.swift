@@ -14,8 +14,7 @@ protocol FoodMenuPresenterProtocol {
     var hits: [Hits] { get }
     var menuModel: [MenuModel] { get }
     
-    func showListRecipiesVC(view: UIViewController, indexPath: IndexPath)
-}
+    func showListRecipiesVC(view: UIViewController, indexPath: IndexPath, screenType: ScreenType)}
 
 // MARK: - Class FoodMenuPresenter
 
@@ -37,9 +36,11 @@ class FoodMenuPresenter {
     }
 }
 
+// MARK: - Private Extension 
+
 extension FoodMenuPresenter: FoodMenuPresenterProtocol {
-    func showListRecipiesVC(view: UIViewController, indexPath: IndexPath) {
+    func showListRecipiesVC(view: UIViewController, indexPath: IndexPath, screenType: ScreenType) {
         let menuFood = menuModel[indexPath.item]
-        navigator.showListVC(view: view, menuModel: menuFood)
+        navigator.showListVC(view: view, menuModel: menuFood, screenType: screenType)
     }
 }

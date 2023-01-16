@@ -9,8 +9,8 @@ import UIKit
 
 class IngredientsCell: UITableViewCell {
 
-    
-    
+    @IBOutlet weak var imageCell: ImageView!
+    @IBOutlet weak var nameIngredientLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -18,12 +18,13 @@ class IngredientsCell: UITableViewCell {
     }
 }
 
-private extension IngredientsCell {
+extension IngredientsCell {
     func setupUI() {
         selectionStyle = .none
     }
     
-    func config(with: Ingredients) {
-        
+    func config(with ingredients: Ingredients) {
+        imageCell.fetchImage(from: ingredients.image ?? "person.fill")
+        nameIngredientLabel.text = ingredients.text
     }
 }

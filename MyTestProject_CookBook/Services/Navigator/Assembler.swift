@@ -22,15 +22,30 @@ class Assembler {
     
     func createFlowController(navigator: NavigatorProtocol) -> UIViewController {
         
-        let vc = FlowController(networking: networking, navigator: navigator)
+        let vc = FlowController(networking: networking, navigator: navigator, coreData: coreData)
         
         return vc
     }
     
-    func createListRecipiesVC(navigator: NavigatorProtocol, menuModel: MenuModel) -> UIViewController {
-        let presenter = ListRecipiesPresenter(navigator: navigator, networking: networking, menuModel: menuModel)
+    func createListRecipiesVC(navigator: NavigatorProtocol, menuModel: MenuModel, screenType: ScreenType) -> UIViewController {
+        let presenter = ListRecipiesPresenter(navigator: navigator, networking: networking, menuModel: menuModel, screenType: screenType, coreData: coreData)
         let vc = ListRecipiesVC(presenter: presenter)
+        presenter.listVC(view: vc)
         
         return vc 
+    }
+    
+    func createIngredientsVC(navigator: NavigatorProtocol, type: Recipe) -> UIViewController {
+        let presenter = IngredientsPresenter(navigator: navigator, networking: networking,
+                                             coreData: coreData, type: type)
+        let vc = IngredientsVC(presenter: presenter)
+        
+        return vc 
+    }
+    
+    func webViewRecipe(url: String) -> UIViewController {
+        let vc = WebView(url: url)
+        
+        return vc
     }
 }

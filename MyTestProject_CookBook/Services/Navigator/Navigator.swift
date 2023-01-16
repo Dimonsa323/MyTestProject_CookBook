@@ -11,7 +11,9 @@ import UIKit
 protocol NavigatorProtocol {
     func showStartVC() -> UIViewController
     func showTabBar(view: UIViewController)
-    func showListVC(view: UIViewController, menuModel: MenuModel)
+    func showListVC(view: UIViewController, menuModel: MenuModel, screenType: ScreenType)
+    func showIngredientsRecipe(view: UIViewController, type: Recipe)
+    func showWebView(view: UIViewController, url: String)
 }
 
 class Navigator: NavigatorProtocol {
@@ -31,9 +33,21 @@ class Navigator: NavigatorProtocol {
         view.navigationController?.present(vc, animated: true)
     }
     
-    func showListVC(view: UIViewController, menuModel: MenuModel) {
-        let vc = assembler.createListRecipiesVC(navigator: self, menuModel: menuModel)
+    func showListVC(view: UIViewController, menuModel: MenuModel, screenType: ScreenType) {
+        let vc = assembler.createListRecipiesVC(navigator: self, menuModel: menuModel, screenType: screenType)
         vc.hidesBottomBarWhenPushed = true
+        view.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func showIngredientsRecipe(view: UIViewController, type: Recipe) {
+        let vc = assembler.createIngredientsVC(navigator: self, type: type)
+        
+        view.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func showWebView(view: UIViewController, url: String) {
+        let vc = assembler.webViewRecipe(url: url)
+        view.hidesBottomBarWhenPushed = true
         view.navigationController?.pushViewController(vc, animated: true)
     }
 }

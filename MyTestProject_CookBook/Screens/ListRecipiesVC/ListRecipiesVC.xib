@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ListRecipiesVC" customModule="MyTestProject_CookBook" customModuleProvider="target">
             <connections>
+                <outlet property="emptyLabel" destination="8Of-mq-P1d" id="wAB-6Y-4gm"/>
                 <outlet property="tableView" destination="K2u-iY-Mi1" id="Xgz-R5-CqQ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -24,12 +25,21 @@
                     <rect key="frame" x="0.0" y="47" width="390" height="763"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You don't have favourite recipe" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Of-mq-P1d">
+                    <rect key="frame" x="32" y="408.33333333333331" width="326" height="27.666666666666686"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="K2u-iY-Mi1" secondAttribute="trailing" id="7tQ-s6-fx9"/>
                 <constraint firstItem="K2u-iY-Mi1" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="9Mg-XN-Nlv"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="8Of-mq-P1d" secondAttribute="trailing" constant="32" id="A9v-PY-c36"/>
+                <constraint firstItem="8Of-mq-P1d" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="RhO-SM-0Vo"/>
+                <constraint firstItem="8Of-mq-P1d" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="dVR-RD-huH"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="K2u-iY-Mi1" secondAttribute="bottom" id="jWm-js-pJh"/>
                 <constraint firstItem="K2u-iY-Mi1" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ueg-pA-V16"/>
             </constraints>

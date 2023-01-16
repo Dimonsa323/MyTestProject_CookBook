@@ -17,6 +17,7 @@ final class FlowController: UIViewController, UITabBarControllerDelegate {
     private let tabBarVC: UITabBarController = UITabBarController()
     private let networking: NetworkingProtocol
     private let navigator: NavigatorProtocol
+    private let coreData: CoreDataStoreProtocol
     
     private lazy var menuScreen: UINavigationController = instantiateFoodMenuVC()
     private lazy var favoriteScreen: UINavigationController = instantiateFavoriteVC()
@@ -24,9 +25,10 @@ final class FlowController: UIViewController, UITabBarControllerDelegate {
     
 // MARK: - Init
     
-    init(networking: NetworkingProtocol, navigator: NavigatorProtocol) {
+    init(networking: NetworkingProtocol, navigator: NavigatorProtocol, coreData: CoreDataStoreProtocol) {
         self.networking = networking
         self.navigator = navigator
+        self.coreData = coreData
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -64,8 +66,9 @@ private extension FlowController {
         }
     
     func instantiateFavoriteVC() -> UINavigationController {
-        let presenter = ListRecipiesPresenter(navigator: navigator, networking: networking, menuModel: .meat)
+        let presenter = ListRecipiesPresenter(navigator: navigator, networking: networking, menuModel: .favorite, screenType: .favoriteRecipe, coreData: coreData)
         let vc = ListRecipiesVC(presenter: presenter)
+        presenter.listVC(view: vc)
         let navigator = UINavigationController(rootViewController: vc)
         vc.tabBarItem = UITabBarItem(title: "Favorite", image: UIImage(named: "icon_favourite_fill"), selectedImage: UIImage(named: "icon_favourite_dont_fill"))
         
