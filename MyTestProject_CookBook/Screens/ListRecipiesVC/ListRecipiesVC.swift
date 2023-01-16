@@ -50,7 +50,7 @@ class ListRecipiesVC: UIViewController {
         } else {
             presenter.getRecipeCD()
         }
-            
+        
         view.showActivityIndicator()
     }
     
@@ -102,7 +102,32 @@ extension ListRecipiesVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         presenter.showIngredientsVC(with: presenter.hits[indexPath.row].recipe, view: self)
     }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        if self.presenter.screenType == .favoriteRecipe {
+            let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { _, _, closure in
+                self.presenter.deleteUserInDataBase(indexPath: indexPath) {
+                    DispatchQueue.main.async {
+                        self.tableView.deleteRows(at: [indexPath], with: .automatic)
+                    }
+                }
+                
+                closure(true)
+            }
+            
+            deleteAction.image = UIImage(systemName: "trash")!
+            deleteAction.backgroundColor = .systemRed
+            
+            let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
+            configuration.performsFirstActionWithFullSwipe = true
+            
+            return configuration
+        } else {
+            return nil
+        }
+    }
 }
+
 
 extension ListRecipiesVC: ListRecipiesProtocol {
     

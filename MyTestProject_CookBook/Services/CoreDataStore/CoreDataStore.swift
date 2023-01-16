@@ -105,6 +105,7 @@ class CoreDataStore: CoreDataStoreProtocol {
     }
     
     func deleteRecipe(id: UUID) {
+        
         let fetchRequest: NSFetchRequest<FavoriteRecipeCD> = FavoriteRecipeCD.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
 

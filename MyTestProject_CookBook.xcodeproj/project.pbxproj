@@ -51,10 +51,11 @@
 		14D758972970AE3400B008E9 /* IngredientsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D758952970AE3400B008E9 /* IngredientsCell.swift */; };
 		14D758982970AE3400B008E9 /* IngredientsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14D758962970AE3400B008E9 /* IngredientsCell.xib */; };
 		14D7589A2973433E00B008E9 /* TypeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D758992973433E00B008E9 /* TypeScreen.swift */; };
-		14D758A82975563100B008E9 /* AnimationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D758A62975563100B008E9 /* AnimationVC.swift */; };
-		14D758A92975563100B008E9 /* AnimationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14D758A72975563100B008E9 /* AnimationVC.xib */; };
 		14D758AC2975833300B008E9 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D758AA2975833300B008E9 /* WebView.swift */; };
 		14D758AD2975833300B008E9 /* WebView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14D758AB2975833300B008E9 /* WebView.xib */; };
+		14D758B02975A05A00B008E9 /* IngredientAnimationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D758AE2975A05A00B008E9 /* IngredientAnimationVC.swift */; };
+		14D758B12975A05A00B008E9 /* IngredientAnimationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14D758AF2975A05A00B008E9 /* IngredientAnimationVC.xib */; };
+		14D758B42975A40F00B008E9 /* IngredientAnimationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D758B32975A40F00B008E9 /* IngredientAnimationPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,10 +105,11 @@
 		14D758952970AE3400B008E9 /* IngredientsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsCell.swift; sourceTree = "<group>"; };
 		14D758962970AE3400B008E9 /* IngredientsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IngredientsCell.xib; sourceTree = "<group>"; };
 		14D758992973433E00B008E9 /* TypeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeScreen.swift; sourceTree = "<group>"; };
-		14D758A62975563100B008E9 /* AnimationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationVC.swift; sourceTree = "<group>"; };
-		14D758A72975563100B008E9 /* AnimationVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimationVC.xib; sourceTree = "<group>"; };
 		14D758AA2975833300B008E9 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		14D758AB2975833300B008E9 /* WebView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WebView.xib; sourceTree = "<group>"; };
+		14D758AE2975A05A00B008E9 /* IngredientAnimationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientAnimationVC.swift; sourceTree = "<group>"; };
+		14D758AF2975A05A00B008E9 /* IngredientAnimationVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IngredientAnimationVC.xib; sourceTree = "<group>"; };
+		14D758B32975A40F00B008E9 /* IngredientAnimationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientAnimationPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -252,13 +254,13 @@
 		14D758242969DF7500B008E9 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				14D7589D297555BF00B008E9 /* AnimationVC */,
 				14D7589B2975558600B008E9 /* WebView */,
 				14D7588D2970ADD200B008E9 /* IngredientsVC */,
 				14D7587C296F3F3F00B008E9 /* ProfileVC */,
 				14D758282969E1D900B008E9 /* StartVC */,
 				14D75835296C82CE00B008E9 /* FoodMenuVC */,
 				14D7586F296F28D900B008E9 /* ListRecipiesVC */,
+				14D758B22975A26700B008E9 /* IngredientAnimation */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -360,13 +362,14 @@
 			path = WebView;
 			sourceTree = "<group>";
 		};
-		14D7589D297555BF00B008E9 /* AnimationVC */ = {
+		14D758B22975A26700B008E9 /* IngredientAnimation */ = {
 			isa = PBXGroup;
 			children = (
-				14D758A62975563100B008E9 /* AnimationVC.swift */,
-				14D758A72975563100B008E9 /* AnimationVC.xib */,
+				14D758AE2975A05A00B008E9 /* IngredientAnimationVC.swift */,
+				14D758AF2975A05A00B008E9 /* IngredientAnimationVC.xib */,
+				14D758B32975A40F00B008E9 /* IngredientAnimationPresenter.swift */,
 			);
-			path = AnimationVC;
+			path = IngredientAnimation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -428,7 +431,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				14D7580A2969D93400B008E9 /* LaunchScreen.storyboard in Resources */,
-				14D758A92975563100B008E9 /* AnimationVC.xib in Resources */,
+				14D758B12975A05A00B008E9 /* IngredientAnimationVC.xib in Resources */,
 				14D75834296C82AE00B008E9 /* FoodMenuVC.xib in Resources */,
 				14D75873296F291F00B008E9 /* ListRecipiesVC.xib in Resources */,
 				14D75860296DD47B00B008E9 /* MenuCell.xib in Resources */,
@@ -459,11 +462,11 @@
 				14D7586A296DF92400B008E9 /* TabBarAppearance.swift in Sources */,
 				14D7585B296CAE5000B008E9 /* IngredientsCD+CoreDataProperties.swift in Sources */,
 				14D758932970AE0800B008E9 /* IngredientsPresenter.swift in Sources */,
+				14D758B42975A40F00B008E9 /* IngredientAnimationPresenter.swift in Sources */,
 				14D75837296C82FC00B008E9 /* FoodMenuPresenter.swift in Sources */,
 				14D75866296DF83800B008E9 /* UIViewController .swift in Sources */,
 				14D7583B296C881D00B008E9 /* RecipeModel.swift in Sources */,
 				14D7586C296DFE3D00B008E9 /* ColorApp.swift in Sources */,
-				14D758A82975563100B008E9 /* AnimationVC.swift in Sources */,
 				14D75858296CAE5000B008E9 /* FavoriteRecipeCD+CoreDataClass.swift in Sources */,
 				14D758272969DFA100B008E9 /* CoreDataStore.swift in Sources */,
 				14D75859296CAE5000B008E9 /* FavoriteRecipeCD+CoreDataProperties.swift in Sources */,
@@ -477,6 +480,7 @@
 				14D75882296F3F7B00B008E9 /* ProfilePresenter.swift in Sources */,
 				14D758052969D93200B008E9 /* MyTestProject_CookBook.xcdatamodeld in Sources */,
 				14D75864296DF81400B008E9 /* NavBarAppearance.swift in Sources */,
+				14D758B02975A05A00B008E9 /* IngredientAnimationVC.swift in Sources */,
 				14D7589A2973433E00B008E9 /* TypeScreen.swift in Sources */,
 				14D757FD2969D93200B008E9 /* SceneDelegate.swift in Sources */,
 				14D7582B2969E28700B008E9 /* StartVC.swift in Sources */,

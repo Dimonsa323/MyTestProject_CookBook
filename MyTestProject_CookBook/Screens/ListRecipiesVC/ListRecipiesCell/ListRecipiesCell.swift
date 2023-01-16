@@ -14,7 +14,6 @@ class ListRecipiesCell: UITableViewCell {
     @IBOutlet weak var textRecipeLabel: UILabel!
     @IBOutlet weak var authorNameLabel: UILabel!
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         setupUI()
@@ -32,6 +31,7 @@ extension ListRecipiesCell {
         imageViewCell.fetchImage(from: recipe.image)
         nameRecipeLabel.text = recipe.label
         textRecipeLabel.text = recipe.source
-        authorNameLabel.text = recipe.source
+        authorNameLabel.text = "Author: \(recipe.source)"
+
     }
 }

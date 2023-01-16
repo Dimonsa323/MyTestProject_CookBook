@@ -48,4 +48,11 @@ class Assembler {
         
         return vc
     }
+    
+    func showAnimationView(navigator: NavigatorProtocol, recipe: Recipe) -> UIViewController {
+        let presenter = IngredientAnimationPresenter(navigator: navigator, networking: networking, recipe: recipe, coreData: coreData)
+        let vc = IngredientAnimationVC(presenter: presenter)
+        
+        return vc
+    }
 }

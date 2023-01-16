@@ -93,6 +93,11 @@ extension IngredientsVC {
 }
 
 extension IngredientsVC: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter.showAnimationVC(view: self)
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         presenter.type.ingredients.count
     }

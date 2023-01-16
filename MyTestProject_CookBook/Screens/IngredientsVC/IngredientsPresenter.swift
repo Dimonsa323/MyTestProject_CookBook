@@ -14,6 +14,7 @@ protocol IngredientsPresenterProtocol {
     var isFavorite: Bool { get set }
     func checkIfElementInCD()
     func saveIngredientsInCoreData()
+    func showAnimationVC(view: UIViewController)
 }
 
 // MARK: - Class IngredientsPresenter
@@ -80,6 +81,10 @@ extension IngredientsPresenter: IngredientsPresenterProtocol {
     
     func showWebViewVC(view: UIViewController) {
         navigator.showWebView(view: view, url: type.url)
+    }
+    
+    func showAnimationVC(view: UIViewController) {
+        navigator.showIngredientsAnimationVC(view: view, recipe: type)
     }
 }
 

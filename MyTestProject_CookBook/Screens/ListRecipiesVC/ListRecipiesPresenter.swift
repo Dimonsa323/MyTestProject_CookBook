@@ -18,6 +18,7 @@ protocol ListRecipiesPresenterProtocol {
     func getRecipeCD()
     func showIngredientsVC(with recipe: Recipe, view: UIViewController)
     func listVC(view: ListRecipiesProtocol)
+    func deleteUserInDataBase(indexPath: IndexPath, closure: () -> Void)
 }
 
 // MARK: - Class
@@ -72,5 +73,15 @@ extension ListRecipiesPresenter: ListRecipiesPresenterProtocol {
     
     func showIngredientsVC(with recipe: Recipe, view: UIViewController) {
         navigator.showIngredientsRecipe(view: view, type: recipe)
+    }
+    
+    func deleteUserInDataBase(indexPath: IndexPath, closure: () -> Void) {
+        guard let id = hits[indexPath.row].recipe.recipeID else {
+            return
+        }
+        coreData.deleteRecipe(id: id)
+        hits.remove(at: indexPath.row)
+        
+        closure()
     }
 }
