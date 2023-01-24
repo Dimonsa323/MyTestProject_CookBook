@@ -29,12 +29,12 @@ class ListRecipiesPresenter {
 
     var hits: [Hits] = []
     var menuModel: MenuModel
-    let screenType: ScreenType
     var view: ListRecipiesProtocol!
+    let screenType: ScreenType
+    let coreData: CoreDataStoreProtocol
     
     private let navigator: NavigatorProtocol
     private let networking: NetworkingProtocol
-    private let coreData: CoreDataStoreProtocol
     
 // MARK: - Init
     
@@ -81,6 +81,8 @@ extension ListRecipiesPresenter: ListRecipiesPresenterProtocol {
         }
         coreData.deleteRecipe(id: id)
         hits.remove(at: indexPath.row)
+        
+        coreData.saveContext()
         
         closure()
     }

@@ -13,7 +13,6 @@ enum MenuModel: String, CaseIterable {
     case chicken
     case fish
     case greens
-    case favorite
     
     var title: String {
         switch self {
@@ -25,8 +24,6 @@ enum MenuModel: String, CaseIterable {
             return "Fish"
         case .greens:
             return "Greens"
-        case .favorite:
-            return "Favorite"
         }
     }
     
@@ -40,8 +37,6 @@ enum MenuModel: String, CaseIterable {
             return "chicken"
         case .greens:
             return "greens"
-        case .favorite:
-            return "Favorite"
         }
     }
     
@@ -55,8 +50,6 @@ enum MenuModel: String, CaseIterable {
             return "Chicken recipies"
         case .greens:
             return "Greens recipies"
-        case .favorite:
-            return "Favorite"
         }
     }
     

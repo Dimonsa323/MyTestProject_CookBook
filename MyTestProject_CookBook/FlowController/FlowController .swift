@@ -66,7 +66,7 @@ private extension FlowController {
         }
     
     func instantiateFavoriteVC() -> UINavigationController {
-        let presenter = ListRecipiesPresenter(navigator: navigator, networking: networking, menuModel: .favorite, screenType: .favoriteRecipe, coreData: coreData)
+        let presenter = ListRecipiesPresenter(navigator: navigator, networking: networking, menuModel: .meat, screenType: .favoriteRecipe, coreData: coreData)
         let vc = ListRecipiesVC(presenter: presenter)
         presenter.listVC(view: vc)
         let navigator = UINavigationController(rootViewController: vc)

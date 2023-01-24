@@ -36,6 +36,7 @@ class WebView: UIViewController, WKNavigationDelegate, WebViewProtocol {
     }
     
     override func loadView() {
+        setupNavBar()
         webView = WKWebView()
         webView.navigationDelegate = self
         view = webView
@@ -51,3 +52,18 @@ class WebView: UIViewController, WKNavigationDelegate, WebViewProtocol {
     }
 }
 
+// MARK: - Private Extension
+
+extension WebView {
+    func setupNavBar() {
+        let leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(didTapUser))
+            
+            //image: .actions, style: .plain, target: self, action: #selector(didTapUser))
+        navigationItem.leftBarButtonItem = leftBarButtonItem
+    }
+    
+    @objc
+    func didTapUser() {
+        setupNavBar()
+    }
+}

@@ -21,6 +21,7 @@ class IngredientsCell: UITableViewCell {
 extension IngredientsCell {
     func setupUI() {
         selectionStyle = .none
+        imageCell.layer.cornerRadius = imageCell.bounds.height / 2
     }
     
     func config(with ingredients: Ingredients) {
