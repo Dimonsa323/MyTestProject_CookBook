@@ -11,6 +11,7 @@ import UIKit
 
 protocol ListRecipiesProtocol {
     
+    func setupTitle(title: String)
     func reload()
 }
 
@@ -48,18 +49,22 @@ class ListRecipiesVC: UIViewController {
         if presenter.screenType == .internetRecipe {
             presenter.getInfo()
         } else {
-            presenter.getRecipeCD()
+            setupTitle(title: "Favorite recipes")
         }
         
         view.showActivityIndicator()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationController?.navigationBar.prefersLargeTitles = true
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         if presenter.screenType == .favoriteRecipe {
             presenter.getRecipeCD()
         }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
 }
 
@@ -79,6 +84,7 @@ private extension ListRecipiesVC {
     }
     
     func setupTableView() {
+        tableView.showsVerticalScrollIndicator = false
         tableView.layer.opacity = 0
         tableView.delegate = self
         tableView.dataSource = self
@@ -103,12 +109,16 @@ extension ListRecipiesVC: UITableViewDelegate, UITableViewDataSource {
         presenter.showIngredientsVC(with: presenter.hits[indexPath.row].recipe, view: self)
     }
     
-    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+    func tableView(_ tableView: UITableView,
+                   trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         if self.presenter.screenType == .favoriteRecipe {
-            let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { _, _, closure in
-                self.presenter.deleteUserInDataBase(indexPath: indexPath) {
+            let deleteAction = UIContextualAction(style: .destructive, title: "Delete")
+            { _, _, closure in
+                self.presenter.deleteRecipeInDataBase(indexPath: indexPath) {
+                    
                     DispatchQueue.main.async {
                         self.tableView.deleteRows(at: [indexPath], with: .automatic)
+                        self.reload()
                     }
                 }
                 
@@ -128,8 +138,11 @@ extension ListRecipiesVC: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-
 extension ListRecipiesVC: ListRecipiesProtocol {
+    
+    func setupTitle(title: String) {
+        navigationItem.title = title
+    }
     
     func reload() {
         tableView.reloadData()

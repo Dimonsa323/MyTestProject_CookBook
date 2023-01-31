@@ -43,8 +43,9 @@ class Assembler {
         return vc 
     }
     
-    func webViewRecipe(url: String) -> UIViewController {
-        let vc = WebView(url: url)
+    func webViewRecipe(url: String, navigator: NavigatorProtocol) -> UIViewController {
+        let presenter = WebPresenter(navigator: navigator)
+        let vc = WebView(url: url, presenter: presenter)
         
         return vc
     }

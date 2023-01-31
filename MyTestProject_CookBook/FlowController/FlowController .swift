@@ -25,7 +25,9 @@ final class FlowController: UIViewController, UITabBarControllerDelegate {
     
 // MARK: - Init
     
-    init(networking: NetworkingProtocol, navigator: NavigatorProtocol, coreData: CoreDataStoreProtocol) {
+    init(networking: NetworkingProtocol,
+         navigator: NavigatorProtocol,
+         coreData: CoreDataStoreProtocol) {
         self.networking = networking
         self.navigator = navigator
         self.coreData = coreData
@@ -52,7 +54,9 @@ final class FlowController: UIViewController, UITabBarControllerDelegate {
 private extension FlowController {
     
     func setupVCs() {
-        tabBarVC.navigationController?.setViewControllers([menuScreen, favoriteScreen, profileScreen], animated: true)
+        tabBarVC.navigationController?.setViewControllers(
+            [menuScreen, favoriteScreen, profileScreen], animated: true
+        )
     }
     
     func instantiateFoodMenuVC() -> UINavigationController {
@@ -66,7 +70,11 @@ private extension FlowController {
         }
     
     func instantiateFavoriteVC() -> UINavigationController {
-        let presenter = ListRecipiesPresenter(navigator: navigator, networking: networking, menuModel: .meat, screenType: .favoriteRecipe, coreData: coreData)
+        let presenter = ListRecipiesPresenter(navigator: navigator,
+                                              networking: networking,
+                                              menuModel: .meat,
+                                              screenType: .favoriteRecipe,
+                                              coreData: coreData)
         let vc = ListRecipiesVC(presenter: presenter)
         presenter.listVC(view: vc)
         let navigator = UINavigationController(rootViewController: vc)

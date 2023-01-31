@@ -18,7 +18,7 @@ protocol ListRecipiesPresenterProtocol {
     func getRecipeCD()
     func showIngredientsVC(with recipe: Recipe, view: UIViewController)
     func listVC(view: ListRecipiesProtocol)
-    func deleteUserInDataBase(indexPath: IndexPath, closure: () -> Void)
+    func deleteRecipeInDataBase(indexPath: IndexPath, closure: () -> Void)
 }
 
 // MARK: - Class
@@ -38,7 +38,11 @@ class ListRecipiesPresenter {
     
 // MARK: - Init
     
-    init(navigator: NavigatorProtocol, networking: NetworkingProtocol, menuModel: MenuModel, screenType: ScreenType, coreData: CoreDataStoreProtocol) {
+    init(navigator: NavigatorProtocol,
+         networking: NetworkingProtocol,
+         menuModel: MenuModel,
+         screenType: ScreenType,
+         coreData: CoreDataStoreProtocol) {
         self.navigator = navigator
         self.networking = networking
         self.menuModel = menuModel
@@ -75,12 +79,15 @@ extension ListRecipiesPresenter: ListRecipiesPresenterProtocol {
         navigator.showIngredientsRecipe(view: view, type: recipe)
     }
     
-    func deleteUserInDataBase(indexPath: IndexPath, closure: () -> Void) {
-        guard let id = hits[indexPath.row].recipe.recipeID else {
-            return
-        }
-        coreData.deleteRecipe(id: id)
+    func deleteRecipeInDataBase(indexPath: IndexPath, closure: () -> Void) {
+        
+        coreData.deleteRecipe(with: hits[indexPath.row].recipe.label)
         hits.remove(at: indexPath.row)
+//        guard let id = hits[indexPath.row].recipe.recipeID else {
+//            return
+//        }
+//        coreData.deleteRecipe(id: id)
+//        hits.remove(at: indexPath.row)
         
         coreData.saveContext()
         

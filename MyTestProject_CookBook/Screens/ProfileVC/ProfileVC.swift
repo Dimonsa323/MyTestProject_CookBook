@@ -35,7 +35,7 @@ class ProfileVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.isNavigationBarHidden = true
+        navigationController?.isNavigationBarHidden = false
         imageProfile.layer.cornerRadius = 16
         profileButton.layer.cornerRadius = 6
     }

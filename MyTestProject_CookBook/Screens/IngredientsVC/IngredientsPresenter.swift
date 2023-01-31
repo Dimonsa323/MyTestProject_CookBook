@@ -15,6 +15,7 @@ protocol IngredientsPresenterProtocol {
     func checkIfElementInCD()
     func saveIngredientsInCoreData()
     func showAnimationVC(view: UIViewController)
+    func showWebViewVC(view: UIViewController)
 }
 
 // MARK: - Class IngredientsPresenter

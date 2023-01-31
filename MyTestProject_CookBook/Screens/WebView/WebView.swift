@@ -18,16 +18,20 @@ protocol WebViewProtocol {
 
 class WebView: UIViewController, WKNavigationDelegate, WebViewProtocol {
     
+// MARK: - IBOutlets
+    
+    @IBOutlet weak var webView: WKWebView!
+    
 // MARK: - Properties
     
-    var webView: WKWebView!
-    
     private let url: String
+    private let presenter: WebPresenter
     
 // MARK: - Init
     
-    init(url: String) {
+    init(url: String, presenter: WebPresenter) {
         self.url = url
+        self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -35,17 +39,18 @@ class WebView: UIViewController, WKNavigationDelegate, WebViewProtocol {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func loadView() {
-        setupNavBar()
-        webView = WKWebView()
-        webView.navigationDelegate = self
-        view = webView
-    }
-    
+//    override func loadView() {
+//        setupNavBar()
+//        webView = WKWebView()
+//        webView.navigationDelegate = self
+//        view = webView
+//    }
+//
 // MARK: - Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupNavBar()
         guard let urlInfo = URL(string: url)  else { return }
         webView.load(URLRequest(url: urlInfo))
         webView.allowsBackForwardNavigationGestures = true
@@ -56,14 +61,16 @@ class WebView: UIViewController, WKNavigationDelegate, WebViewProtocol {
 
 extension WebView {
     func setupNavBar() {
-        let leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(didTapUser))
+        let leftBarButtonItem = UIBarButtonItem(title: "Back",
+                                                style: .plain,
+                                                target: self,
+                                                action: #selector(didTapUser))
             
-            //image: .actions, style: .plain, target: self, action: #selector(didTapUser))
         navigationItem.leftBarButtonItem = leftBarButtonItem
     }
     
     @objc
     func didTapUser() {
-        setupNavBar()
+        navigationController?.popViewController(animated: true)
     }
 }

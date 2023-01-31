@@ -51,7 +51,8 @@ extension FoodMenuVC {
         collectionView.showsVerticalScrollIndicator = false
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(.init(nibName: createCell, bundle: nil), forCellWithReuseIdentifier: createCell)
+        collectionView.register(.init(nibName: createCell, bundle: nil),
+                                forCellWithReuseIdentifier: createCell)
     }
     
     func setupNavigationController() {
@@ -63,11 +64,13 @@ extension FoodMenuVC {
 
 extension FoodMenuVC: UICollectionViewDataSource, UICollectionViewDelegate {
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int)
+    -> Int {
         presenter.menuModel.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath)
+    -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: createCell,
                                                       for: indexPath) as! MenuCell
         let menuModel = presenter.menuModel[indexPath.item]

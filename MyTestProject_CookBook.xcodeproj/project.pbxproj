@@ -56,6 +56,7 @@
 		14D758B02975A05A00B008E9 /* IngredientAnimationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D758AE2975A05A00B008E9 /* IngredientAnimationVC.swift */; };
 		14D758B12975A05A00B008E9 /* IngredientAnimationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14D758AF2975A05A00B008E9 /* IngredientAnimationVC.xib */; };
 		14D758B42975A40F00B008E9 /* IngredientAnimationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D758B32975A40F00B008E9 /* IngredientAnimationPresenter.swift */; };
+		14D758B629816F5600B008E9 /* WebPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D758B529816F5600B008E9 /* WebPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -110,6 +111,7 @@
 		14D758AE2975A05A00B008E9 /* IngredientAnimationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientAnimationVC.swift; sourceTree = "<group>"; };
 		14D758AF2975A05A00B008E9 /* IngredientAnimationVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IngredientAnimationVC.xib; sourceTree = "<group>"; };
 		14D758B32975A40F00B008E9 /* IngredientAnimationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientAnimationPresenter.swift; sourceTree = "<group>"; };
+		14D758B529816F5600B008E9 /* WebPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -358,6 +360,7 @@
 			children = (
 				14D758AA2975833300B008E9 /* WebView.swift */,
 				14D758AB2975833300B008E9 /* WebView.xib */,
+				14D758B529816F5600B008E9 /* WebPresenter.swift */,
 			);
 			path = WebView;
 			sourceTree = "<group>";
@@ -459,6 +462,7 @@
 				14D75862296DD4C700B008E9 /* MenuModel.swift in Sources */,
 				14D7581B2969DE9700B008E9 /* Navigator.swift in Sources */,
 				14D7585F296DD47B00B008E9 /* MenuCell.swift in Sources */,
+				14D758B629816F5600B008E9 /* WebPresenter.swift in Sources */,
 				14D7586A296DF92400B008E9 /* TabBarAppearance.swift in Sources */,
 				14D7585B296CAE5000B008E9 /* IngredientsCD+CoreDataProperties.swift in Sources */,
 				14D758932970AE0800B008E9 /* IngredientsPresenter.swift in Sources */,

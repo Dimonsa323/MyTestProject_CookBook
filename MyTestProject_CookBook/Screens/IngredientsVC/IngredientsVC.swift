@@ -54,6 +54,7 @@ extension IngredientsVC {
     }
     
     func setupTableView() {
+        tableView.showsVerticalScrollIndicator = false
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(.init(nibName: ingredientCell, bundle: nil), forCellReuseIdentifier: ingredientCell)
@@ -80,7 +81,10 @@ extension IngredientsVC {
         func setupNavBar() {
             let image = UIImage(named: presenter.isFavorite ? "icon_favourite_dont_fill" : "icon_favourite_fill")
             
-            let rightBarButtonItem = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(didTapUser))
+            let rightBarButtonItem = UIBarButtonItem(image: image,
+                                                     style: .plain,
+                                                     target: self,
+                                                     action: #selector(didTapUser))
             navigationItem.rightBarButtonItem = rightBarButtonItem
         }
     
@@ -117,7 +121,7 @@ extension IngredientsVC: UITableViewDataSource, UITableViewDelegate {
         titleButton.setTitleColor(.black, for: .normal)
         titleButton.setTitle("Full Recipe", for: .normal)
         titleButton.layer.cornerRadius = 6
-        titleButton.addTarget(self, action: #selector(touchUpFullRecupe), for: .touchUpInside)
+        titleButton.addTarget(self, action: #selector(touchUpFullRecipe), for: .touchUpInside)
         
         
         return titleButton
@@ -144,13 +148,12 @@ extension IngredientsVC: UITableViewDataSource, UITableViewDelegate {
         
         return 32
     }
-    
 }
 
 extension IngredientsVC {
     
     @objc
-    private func touchUpFullRecupe() {
+    private func touchUpFullRecipe() {
         presenter.showWebViewVC(view: self)
     }
 }

@@ -26,7 +26,10 @@ class IngredientAnimationPresenter: IngredientAnimationPresenterProtocol {
 
 // MARK: - Init
     
-    init(navigator: NavigatorProtocol, networking: NetworkingProtocol, recipe: Recipe, coreData: CoreDataStoreProtocol) {
+    init(navigator: NavigatorProtocol,
+         networking: NetworkingProtocol,
+         recipe: Recipe,
+         coreData: CoreDataStoreProtocol) {
         self.navigator = navigator
         self.networking = networking
         self.recipe = recipe
