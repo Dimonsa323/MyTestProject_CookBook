@@ -23,7 +23,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo_2022-10-22 17.05.59" translatesAutoresizingMaskIntoConstraints="NO" id="N1i-u9-X4l">
-                    <rect key="frame" x="16" y="118.33333333333331" width="80" height="80"/>
+                    <rect key="frame" x="16" y="55" width="80" height="80"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="80" id="mZx-0D-kwt"/>
                         <constraint firstAttribute="width" constant="80" id="oE1-RV-zb1"/>
@@ -43,14 +43,8 @@
                         <action selector="infoButton:" destination="-1" eventType="touchUpInside" id="i62-kC-Tth"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9X2-14-2Js">
-                    <rect key="frame" x="16" y="62" width="358" height="40.666666666666657"/>
-                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="34"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gvG-lA-eng">
-                    <rect key="frame" x="104" y="141" width="115.66666666666669" height="37.333333333333343"/>
+                    <rect key="frame" x="104" y="77.666666666666671" width="115.66666666666669" height="37.333333333333329"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dima Hubenya" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3XL-IT-Hch">
                             <rect key="frame" x="0.0" y="0.0" width="115.66666666666667" height="20.333333333333332"/>
@@ -59,7 +53,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IOS Developer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5eE-xH-KaA">
-                            <rect key="frame" x="0.0" y="20.333333333333343" width="115.66666666666667" height="17"/>
+                            <rect key="frame" x="0.0" y="20.333333333333329" width="115.66666666666667" height="17"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" name="tintGraytextColor"/>
                             <nil key="highlightedColor"/>
@@ -67,7 +61,7 @@
                     </subviews>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="RFs-dy-VqG">
-                    <rect key="frame" x="16" y="222.33333333333334" width="358" height="109.66666666666666"/>
+                    <rect key="frame" x="16" y="159" width="358" height="109.66666666666669"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Technical skills" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7pH-ST-cHL">
                             <rect key="frame" x="0.0" y="0.0" width="358" height="20.333333333333332"/>
@@ -76,7 +70,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AAS-ek-oOd">
-                            <rect key="frame" x="0.0" y="28.333333333333307" width="358" height="81.333333333333314"/>
+                            <rect key="frame" x="0.0" y="28.333333333333336" width="358" height="81.333333333333314"/>
                             <string key="text">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</string>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" name="tintGraytextColor"/>
@@ -85,7 +79,7 @@
                     </subviews>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="IQD-Cz-KAP">
-                    <rect key="frame" x="16" y="348" width="358" height="109.66666666666669"/>
+                    <rect key="frame" x="16" y="284.66666666666669" width="358" height="109.66666666666669"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Languages" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="baE-7Q-Qgf">
                             <rect key="frame" x="0.0" y="0.0" width="358" height="20.333333333333332"/>
@@ -103,7 +97,7 @@
                     </subviews>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="wsv-Or-Q36">
-                    <rect key="frame" x="16" y="473.66666666666669" width="358" height="95.333333333333314"/>
+                    <rect key="frame" x="16" y="410.33333333333331" width="358" height="95.333333333333314"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contacts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Z2-2P-4eF">
                             <rect key="frame" x="0.0" y="0.0" width="358" height="20.333333333333332"/>
@@ -112,7 +106,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uae-xw-rOa">
-                            <rect key="frame" x="0.0" y="28.333333333333314" width="358" height="67"/>
+                            <rect key="frame" x="0.0" y="28.333333333333371" width="358" height="67"/>
                             <string key="text">Linkedin: www.linkedin.com/in/дмитро-губеня-38779a254                                                                               Email: dima96gubenya@gmail.com                                                                      Github: https://github.com/Dimonsa323</string>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" name="tintGraytextColor"/>
@@ -126,9 +120,7 @@
             <constraints>
                 <constraint firstItem="RFs-dy-VqG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="0CY-Vc-bTm"/>
                 <constraint firstItem="wsv-Or-Q36" firstAttribute="top" secondItem="IQD-Cz-KAP" secondAttribute="bottom" constant="16" id="0Gk-8O-AGk"/>
-                <constraint firstItem="9X2-14-2Js" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="15" id="3hC-hq-1nh"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="OI9-NK-spz" secondAttribute="trailing" constant="16" id="BS1-qO-7Ti"/>
-                <constraint firstItem="9X2-14-2Js" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="Gvc-3Z-UJy"/>
                 <constraint firstItem="gvG-lA-eng" firstAttribute="leading" secondItem="N1i-u9-X4l" secondAttribute="trailing" constant="8" id="HPy-0n-HK1"/>
                 <constraint firstItem="wsv-Or-Q36" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="JPM-Xg-oYu"/>
                 <constraint firstItem="RFs-dy-VqG" firstAttribute="top" secondItem="N1i-u9-X4l" secondAttribute="bottom" constant="24" id="SIN-bU-bBK"/>
@@ -136,13 +128,12 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="RFs-dy-VqG" secondAttribute="trailing" constant="16" id="UUh-WD-N0f"/>
                 <constraint firstItem="OI9-NK-spz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="XpK-rk-mFM"/>
                 <constraint firstItem="IQD-Cz-KAP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="ZBZ-Nk-CXh"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9X2-14-2Js" secondAttribute="trailing" constant="16" id="f09-n9-c4y"/>
                 <constraint firstItem="IQD-Cz-KAP" firstAttribute="top" secondItem="RFs-dy-VqG" secondAttribute="bottom" constant="16" id="g06-pH-9IF"/>
+                <constraint firstItem="N1i-u9-X4l" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="8" id="hQR-iW-Jx7"/>
                 <constraint firstItem="N1i-u9-X4l" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="hsz-Ze-yG0"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="IQD-Cz-KAP" secondAttribute="trailing" constant="16" id="mYE-S7-QmX"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="wsv-Or-Q36" secondAttribute="trailing" constant="16" id="qoz-B2-698"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="OI9-NK-spz" secondAttribute="bottom" constant="73" id="w4s-bb-1Bq"/>
-                <constraint firstItem="N1i-u9-X4l" firstAttribute="top" secondItem="9X2-14-2Js" secondAttribute="bottom" constant="15.5" id="yCE-lJ-hbf"/>
             </constraints>
             <point key="canvasLocation" x="48" y="21"/>
         </view>

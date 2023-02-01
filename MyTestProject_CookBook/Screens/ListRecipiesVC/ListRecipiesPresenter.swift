@@ -83,11 +83,6 @@ extension ListRecipiesPresenter: ListRecipiesPresenterProtocol {
         
         coreData.deleteRecipe(with: hits[indexPath.row].recipe.label)
         hits.remove(at: indexPath.row)
-//        guard let id = hits[indexPath.row].recipe.recipeID else {
-//            return
-//        }
-//        coreData.deleteRecipe(id: id)
-//        hits.remove(at: indexPath.row)
         
         coreData.saveContext()
         

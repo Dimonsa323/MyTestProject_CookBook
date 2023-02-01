@@ -35,9 +35,7 @@ class ProfileVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.isNavigationBarHidden = false
-        imageProfile.layer.cornerRadius = 16
-        profileButton.layer.cornerRadius = 6
+        setupUI()
     }
 }
 
@@ -47,5 +45,36 @@ extension ProfileVC {
     
     @IBAction func infoButton(_ sender: Any) {
         presenter.showLinkedin(view: self)
+    }
+}
+
+extension ProfileVC {
+    func setupUI() {
+        setupNavBar()
+        setup()
+    }
+    
+    func setupNavBar() {
+        setupNavigationBar()
+        title = "Profile"
+        navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
+    func setup() {
+        imageProfile.layer.cornerRadius = imageProfile.bounds.height / 2
+        profileButton.layer.cornerRadius = 6
+    }
+    
+    func setupNavigationBar() {
+        let image = UIImage(named: "settings")
+        
+        let rightBarButtonItem = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(didTapSettings))
+        
+        navigationItem.rightBarButtonItem = rightBarButtonItem
+    }
+    
+    @objc
+    func didTapSettings() {
+        
     }
 }

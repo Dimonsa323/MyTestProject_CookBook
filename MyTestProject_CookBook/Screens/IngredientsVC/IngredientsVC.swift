@@ -84,12 +84,12 @@ extension IngredientsVC {
             let rightBarButtonItem = UIBarButtonItem(image: image,
                                                      style: .plain,
                                                      target: self,
-                                                     action: #selector(didTapUser))
+                                                     action: #selector(didTapRecipe))
             navigationItem.rightBarButtonItem = rightBarButtonItem
         }
     
     @objc
-    func didTapUser() {
+    func didTapRecipe() {
         presenter.isFavorite.toggle()
         setupNavBar()
         presenter.saveIngredientsInCoreData()
@@ -142,11 +142,6 @@ extension IngredientsVC: UITableViewDataSource, UITableViewDelegate {
         titleLabel.text = "Ingredients"
         
         return titleLabel
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        
-        return 32
     }
 }
 
