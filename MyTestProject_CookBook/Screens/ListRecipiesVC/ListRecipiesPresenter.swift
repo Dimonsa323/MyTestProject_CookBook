@@ -19,6 +19,7 @@ protocol ListRecipiesPresenterProtocol {
     func showIngredientsVC(with recipe: Recipe, view: UIViewController)
     func listVC(view: ListRecipiesProtocol)
     func deleteRecipeInDataBase(indexPath: IndexPath, closure: () -> Void)
+    func filterContentForSearchText(searchText: String, isFiltering: Bool)
 }
 
 // MARK: - Class
@@ -35,6 +36,13 @@ class ListRecipiesPresenter {
     
     private let navigator: NavigatorProtocol
     private let networking: NetworkingProtocol
+    private var filteredSearch: [Hits] = []
+    private var foodRecipes: [Hits] = []
+    private var isFiltering: Bool = false {
+        didSet {
+            hits = isFiltering ? filteredSearch : foodRecipes
+        }
+    }
     
 // MARK: - Init
     
@@ -61,7 +69,7 @@ extension ListRecipiesPresenter: ListRecipiesPresenterProtocol {
     
     func getInfo() {
         networking.getModel(type: menuModel) { hit in
-            self.hits = hit
+            self.foodRecipes = hit
             self.view?.reload()
         }
     }
@@ -70,7 +78,7 @@ extension ListRecipiesPresenter: ListRecipiesPresenterProtocol {
         coreData.fetchRequest { [weak self] recipe in
             let likedRecipies = recipe.map(Recipe.init(recipe:))
             let hits = likedRecipies.map { Hits(recipe: $0) }
-            self?.hits = hits
+            self?.foodRecipes = hits
             self?.view?.reload()
         }
     }
@@ -81,11 +89,20 @@ extension ListRecipiesPresenter: ListRecipiesPresenterProtocol {
     
     func deleteRecipeInDataBase(indexPath: IndexPath, closure: () -> Void) {
         
-        coreData.deleteRecipe(with: hits[indexPath.row].recipe.label)
-        hits.remove(at: indexPath.row)
+        coreData.deleteRecipe(with: foodRecipes[indexPath.row].recipe.label)
+        foodRecipes.remove(at: indexPath.row)
         
         coreData.saveContext()
         
         closure()
+    }
+    
+    func filterContentForSearchText(searchText: String, isFiltering: Bool) {
+        filteredSearch = foodRecipes.filter {
+            $0.recipe.label.lowercased().contains(searchText.lowercased())
+        }
+        
+        self.isFiltering = isFiltering
+        view?.reload()
     }
 }

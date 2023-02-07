@@ -26,8 +26,18 @@ class ListRecipiesVC: UIViewController {
     
     // MARK: - Properties
     
+    var searchBarIsEmpty: Bool {
+        guard let text = searchController.searchBar.text else { return false }
+        return text.isEmpty
+    }
+    
+    private var isFiltering: Bool {
+        return searchController.isActive && !searchBarIsEmpty
+    }
+    
     private let presenter: ListRecipiesPresenterProtocol
     private let listCell: String = String(describing: ListRecipiesCell.self)
+    private let searchController = UISearchController(searchResultsController: nil)
     
     // MARK: - Init
     
@@ -74,6 +84,15 @@ private extension ListRecipiesVC {
     func setupUI() {
         setupTableView()
         setupNavigationBar()
+        setupSearch()
+    }
+    
+    func setupSearch() {
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
     }
     
     func setupNavigationBar() {
@@ -100,6 +119,7 @@ extension ListRecipiesVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: listCell, for: indexPath) as! ListRecipiesCell
         let recipe = presenter.hits[indexPath.row]
+        
         cell.config(with: recipe.recipe)
         
         return cell
@@ -154,5 +174,15 @@ extension ListRecipiesVC: ListRecipiesProtocol {
                 self.emptyLabel.isHidden = !self.presenter.hits.isEmpty
             }
         }
+    }
+}
+
+extension ListRecipiesVC: UISearchResultsUpdating {
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        presenter.filterContentForSearchText(
+            searchText: searchController.searchBar.text ?? "",
+            isFiltering: isFiltering
+        )
     }
 }
