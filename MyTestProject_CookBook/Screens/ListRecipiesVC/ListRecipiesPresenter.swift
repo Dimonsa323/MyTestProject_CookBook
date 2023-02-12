@@ -68,9 +68,10 @@ extension ListRecipiesPresenter: ListRecipiesPresenterProtocol {
     }
     
     func getInfo() {
-        networking.getModel(type: menuModel) { hit in
-            self.foodRecipes = hit
-            self.view?.reload()
+        networking.getModel(type: menuModel) { [weak self] hit in
+            self?.foodRecipes = hit
+            self?.hits = hit
+            self?.view?.reload()
         }
     }
     
@@ -79,6 +80,7 @@ extension ListRecipiesPresenter: ListRecipiesPresenterProtocol {
             let likedRecipies = recipe.map(Recipe.init(recipe:))
             let hits = likedRecipies.map { Hits(recipe: $0) }
             self?.foodRecipes = hits
+            self?.hits = hits
             self?.view?.reload()
         }
     }
@@ -89,8 +91,8 @@ extension ListRecipiesPresenter: ListRecipiesPresenterProtocol {
     
     func deleteRecipeInDataBase(indexPath: IndexPath, closure: () -> Void) {
         
-        coreData.deleteRecipe(with: foodRecipes[indexPath.row].recipe.label)
-        foodRecipes.remove(at: indexPath.row)
+        coreData.deleteRecipe(with: hits[indexPath.row].recipe.label)
+        hits.remove(at: indexPath.row)
         
         coreData.saveContext()
         

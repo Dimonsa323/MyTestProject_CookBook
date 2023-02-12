@@ -87,6 +87,6 @@ extension FoodMenuVC: UICollectionViewDataSource, UICollectionViewDelegate {
 extension FoodMenuVC: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: UIScreen.main.bounds.width - 32, height: 150)
+        CGSize(width: UIScreen.main.bounds.width - 16, height: 150)
     }
 }

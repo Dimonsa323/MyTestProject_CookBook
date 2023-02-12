@@ -41,10 +41,10 @@ class IngredientAnimationVC: UIViewController {
         setupUI()
         UIView.animate(withDuration: 2, delay: 0.2, options: .curveEaseIn, animations: {
             self.imageView.center = self.view.center
-            self.imageView.transform = CGAffineTransform(scaleX: 2, y: 2)
-            self.imageView.transform = CGAffineTransform(translationX: -256, y: -256)
+         //   self.imageView.transform = CGAffineTransform(scaleX: 2, y: 2)
+          //  self.imageView.transform = CGAffineTransform(translationX: -256, y: -256)
             self.imageView.transform = CGAffineTransform(rotationAngle: .pi)
-           // self.imageView.transform = CGAffineTransform(rotationAngle: .pi * 2)
+            self.imageView.transform = CGAffineTransform(rotationAngle: .pi * 2)
             self.imageView.transform = CGAffineTransform.identity
         }) { _ in
         }

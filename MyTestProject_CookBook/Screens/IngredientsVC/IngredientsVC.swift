@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class IngredientsVC: UIViewController {
     
@@ -141,7 +142,17 @@ extension IngredientsVC: UITableViewDataSource, UITableViewDelegate {
         titleLabel.textColor = .white
         titleLabel.text = "Ingredients"
         
-        return titleLabel
+        let view = UIView()
+        view.backgroundColor = .clear
+        
+        view.addSubview(titleLabel)
+        
+        titleLabel.snp.makeConstraints {
+            $0.top.equalToSuperview()
+            $0.bottom.equalToSuperview().inset(16)
+            $0.leading.trailing.equalToSuperview().inset(16)
+        }
+        return view
     }
 }
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14ACF67B2999592A0029902A /* SFProText-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 14ACF67A2999592A0029902A /* SFProText-Semibold.ttf */; };
 		14D757FB2969D93200B008E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D757FA2969D93200B008E9 /* AppDelegate.swift */; };
 		14D757FD2969D93200B008E9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D757FC2969D93200B008E9 /* SceneDelegate.swift */; };
 		14D758052969D93200B008E9 /* MyTestProject_CookBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 14D758032969D93200B008E9 /* MyTestProject_CookBook.xcdatamodeld */; };
@@ -57,9 +58,11 @@
 		14D758B12975A05A00B008E9 /* IngredientAnimationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14D758AF2975A05A00B008E9 /* IngredientAnimationVC.xib */; };
 		14D758B42975A40F00B008E9 /* IngredientAnimationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D758B32975A40F00B008E9 /* IngredientAnimationPresenter.swift */; };
 		14D758B629816F5600B008E9 /* WebPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D758B529816F5600B008E9 /* WebPresenter.swift */; };
+		14D758DC2997FBEC00B008E9 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 14D758DB2997FBEC00B008E9 /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		14ACF67A2999592A0029902A /* SFProText-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProText-Semibold.ttf"; sourceTree = "<group>"; };
 		14D757F72969D93200B008E9 /* MyTestProject_CookBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTestProject_CookBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14D757FA2969D93200B008E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14D757FC2969D93200B008E9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -119,12 +122,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14D758DC2997FBEC00B008E9 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		14ACF6792999590D0029902A /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				14ACF67A2999592A0029902A /* SFProText-Semibold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		14D757EE2969D93200B008E9 = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +156,7 @@
 		14D757F92969D93200B008E9 /* MyTestProject_CookBook */ = {
 			isa = PBXGroup;
 			children = (
+				14ACF6792999590D0029902A /* Fonts */,
 				14D758242969DF7500B008E9 /* Screens */,
 				14D758192969DE7600B008E9 /* Services */,
 				14D758182969DE6B00B008E9 /* Model */,
@@ -391,6 +404,9 @@
 			dependencies = (
 			);
 			name = MyTestProject_CookBook;
+			packageProductDependencies = (
+				14D758DB2997FBEC00B008E9 /* SnapKit */,
+			);
 			productName = MyTestProject_CookBook;
 			productReference = 14D757F72969D93200B008E9 /* MyTestProject_CookBook.app */;
 			productType = "com.apple.product-type.application";
@@ -419,6 +435,9 @@
 				Base,
 			);
 			mainGroup = 14D757EE2969D93200B008E9;
+			packageReferences = (
+				14D758DA2997FBEC00B008E9 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 14D757F82969D93200B008E9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -444,6 +463,7 @@
 				14D758982970AE3400B008E9 /* IngredientsCell.xib in Resources */,
 				14D7582C2969E28700B008E9 /* StartVC.xib in Resources */,
 				14D758912970ADF600B008E9 /* IngredientsVC.xib in Resources */,
+				14ACF67B2999592A0029902A /* SFProText-Semibold.ttf in Resources */,
 				14D758072969D93400B008E9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -702,6 +722,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		14D758DA2997FBEC00B008E9 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		14D758DB2997FBEC00B008E9 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 14D758DA2997FBEC00B008E9 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		14D758032969D93200B008E9 /* MyTestProject_CookBook.xcdatamodeld */ = {

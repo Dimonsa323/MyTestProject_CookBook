@@ -15,6 +15,7 @@ class MenuCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         setupUI()
+        
     }
     
     func config(type: MenuModel) {

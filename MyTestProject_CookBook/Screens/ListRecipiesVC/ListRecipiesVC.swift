@@ -10,7 +10,6 @@ import UIKit
 // MARK: - Protocol Presenter 
 
 protocol ListRecipiesProtocol {
-    
     func setupTitle(title: String)
     func reload()
 }
@@ -19,7 +18,7 @@ protocol ListRecipiesProtocol {
 
 class ListRecipiesVC: UIViewController {
     
-    // MARK: - IBOutlets
+// MARK: - IBOutlets
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var emptyLabel: UILabel!
@@ -39,7 +38,7 @@ class ListRecipiesVC: UIViewController {
     private let listCell: String = String(describing: ListRecipiesCell.self)
     private let searchController = UISearchController(searchResultsController: nil)
     
-    // MARK: - Init
+// MARK: - Init
     
     init(presenter: ListRecipiesPresenterProtocol) {
         self.presenter = presenter
@@ -50,7 +49,7 @@ class ListRecipiesVC: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - Life Cycle
+// MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,8 +57,6 @@ class ListRecipiesVC: UIViewController {
         
         if presenter.screenType == .internetRecipe {
             presenter.getInfo()
-        } else {
-            setupTitle(title: "Favorite recipes")
         }
         
         view.showActivityIndicator()
@@ -69,6 +66,7 @@ class ListRecipiesVC: UIViewController {
         super.viewWillAppear(animated)
         if presenter.screenType == .favoriteRecipe {
             presenter.getRecipeCD()
+            setupTitle(title: "Favorite recipes")
         }
     }
     
