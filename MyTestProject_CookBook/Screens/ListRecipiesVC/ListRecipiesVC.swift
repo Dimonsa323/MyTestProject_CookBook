@@ -94,8 +94,12 @@ private extension ListRecipiesVC {
     }
     
     func setupNavigationBar() {
+        
         let navBar = presenter.menuModel.navTitle
-        title = navBar
+        
+        if presenter.screenType == .internetRecipe {
+            title = navBar
+        }
         navigationItem.largeTitleDisplayMode = .never
         navigationController?.navigationBar.prefersLargeTitles = false
     }
